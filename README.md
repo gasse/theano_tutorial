@@ -121,6 +121,6 @@ Vous pouvez jouer avec le nombre d'itérations (epochs) et le taux d'apprentissa
 Modifiez le code de la régression logistique afin d'apporter les améliorations suivantes:
 
 + ajouter une (ou plusieurs) couches de neurones cachés, avec une fonction d'activation **tanh**;
-+ ajouter un terme de régularisation **L_2** ou **L_1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
 + ajouter un momentum à la descente de gradient pour accélérer l'apprentissage;
++ ajouter un terme de régularisation **L2** ou **L1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
 + ajouter quelques couches de convolution avec max pooling (`theano.tensor.nnet.conv2d` et `theano.tensor.signal.pool.pool2d`).

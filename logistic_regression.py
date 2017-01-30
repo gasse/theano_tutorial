@@ -130,7 +130,7 @@ n_valid_batches = n_valid // batch_size
 n_test_batches = n_test // batch_size
 
 n_epochs = 100
-learning_rate = 0.01
+learning_rate = 0.1
 for epoch in range(n_epochs):
 
 	# shuffle minibatches
