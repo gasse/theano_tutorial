@@ -103,3 +103,18 @@ Documentation utile:
 
 Téléchargez la base MNIST [**ici**](http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist.pkl.gz).
 
+Récupérez le code de la régression logistique [**ici**](https://github.com/gasse/theano_tutorial/blob/master/logistic_regression.py).
+
+Exécutez et étudiez ce code afin de comprendre les différentes étapes:
+
++ définition du modèle;
+
+
+# Réseau de neurones
+
+Modifiez le code de la régression logistique afin d'apporter les améliorations suivantes:
+
++ ajouter une (ou plusieurs) couches de neurones cachés, avec une fonction d'activation **tanh**;
++ ajouter un terme de régularisation **L_2** ou **L_1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
++ ajouter un momentum à la descente de gradient pour accélérer l'apprentissage;
++ ajouter quelques couches de convolution avec max pooling (`theano.tensor.nnet.conv2d` et `theano.tensor.signal.pool.pool2d`).
