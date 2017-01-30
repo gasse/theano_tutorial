@@ -105,10 +105,16 @@ Téléchargez la base MNIST [**ici**](http://www.iro.umontreal.ca/~lisa/deep/dat
 
 Récupérez le code de la régression logistique [**ici**](https://github.com/gasse/theano_tutorial/blob/master/logistic_regression.py).
 
-Exécutez et étudiez ce code afin de comprendre les différentes étapes:
+Exécutez et étudiez ce code afin d'en comprendre les différentes étapes:
 
 + définition du modèle;
++ définition de deux fonctions coût (negative log-likelihood, hamming loss);
++ calcul du gradient et de la mise à jour des paramètres;
++ compilation des fonctions d'apprentissage et d'évaluation;
++ apprentissage et validation par mini-batches;
++ visualisation de 50 examples mal classés.
 
+Vous pouvez jouer avec le nombre d'itérations (epochs) et le taux d'apprentissage (learning rate) pour obtenir différents résultats. Quel taux d'erreur arrivez-vous à atteindre avec ce modèle?
 
 # Réseau de neurones
 

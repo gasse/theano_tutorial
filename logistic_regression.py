@@ -77,6 +77,11 @@ for p, g in zip(params, grads):
 # compilation
 ########################################################################
 
+predict_y = theano.function(
+	inputs=[x],
+	outputs=y_pred
+)
+
 # mini-batch indexes (symbolic)
 indexes = tt.vector(name='indexes', dtype='int64')
 
@@ -108,11 +113,6 @@ eval_test_batch = theano.function(
 	}
 )
 
-predict_y = theano.function(
-	inputs=[x],
-	outputs=y_pred
-)
-
 # training
 ########################################################################
 
@@ -131,12 +131,12 @@ n_test_batches = n_test // batch_size
 
 n_epochs = 100
 learning_rate = 0.01
-for epoch in range(1, n_epochs+1):
+for epoch in range(n_epochs):
 
 	# shuffle minibatches
 	rng.shuffle(train_indexes)
 
-	# train / compute train cost
+	# train / compute training cost
 	train_cost = np.mean([
 		train_batch(train_indexes[i * batch_size: (i + 1) * batch_size], learning_rate)
 		for i in range(n_train_batches)
@@ -149,7 +149,7 @@ for epoch in range(1, n_epochs+1):
 	], axis=0)
 
 	print('epoch %i, training cost %f/%f, validation cost %f/%f' %
-		  (epoch, train_cost[0], train_cost[1], valid_cost[0], valid_cost[1]))
+		  (epoch + 1, train_cost[0], train_cost[1], valid_cost[0], valid_cost[1]))
 
 # testing
 ########################################################################
@@ -188,7 +188,6 @@ for i in range(n_plot):
     sub[r, c].imshow(img, extent=[0,100,0,1], aspect=100 , cmap=plt.cm.gray, vmin=0., vmax=1.)
     sub[r, c].set_title(title)
 
-plt.suptitle('MNIST test set error: %f' % (test_cost[1])))
+plt.suptitle('MNIST test set error: %f' % (test_cost[1]))
 plt.subplots_adjust(left=0.02, right=.98, top=0.92, bottom=0.02, wspace = 0.05, hspace = 0.4)
-# plt.tight_layout()
 plt.show()
