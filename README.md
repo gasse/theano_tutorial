@@ -5,7 +5,7 @@ TP SOUS LINUX !
 Installez **conda** pour python 3:
 ```sh
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh ./Miniconda3-latest-Linux-x86_64.sh
+bash ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
 Installez les dépendances suivantes:
@@ -25,7 +25,7 @@ Si vous voulez utiliser vos machines perso vous devrez vous débrouiller pour l'
 
 # Prise en main
 
-Pour déveloper, vous pouvez utiliser l'éditeur Geany qui a un terminal intégré. Ecrivez votre code dans un fichier **main.py** que vous exécuterez avec la commande `python3 ./main.py`.
+Pour déveloper, vous pouvez utiliser l'éditeur Geany qui a un terminal intégré. Ecrivez votre code dans un fichier **main.py** que vous exécuterez avec la commande `python ./main.py`.
 
 Commencez par importer **numpy** et **theano**:
 
