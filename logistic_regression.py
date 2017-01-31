@@ -4,7 +4,6 @@ import numpy as np
 import theano
 import theano.tensor as tt
 import matplotlib
-matplotlib.use('Qt4Agg')
 import matplotlib.pyplot as plt
 
 # load MNIST
