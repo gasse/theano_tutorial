@@ -2,10 +2,21 @@
 
 TP SOUS LINUX !
 
-Dans une console, installez la librairie **theano** pour python 3:
+Installez **conda** pour python 3:
+```sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash ./Miniconda3-latest-Linux-x86_64.sh
+```
+
+Installez les dépendances suivantes:
 
 ```python
-pip3 install theano matplotlib
+conda install numpy scipy mkl matplotlib
+```
+
+Installez la librairie **theano**:
+```python
+pip install --user Theano
 ```
 
 Si vous voulez utiliser vos machines perso vous devrez vous débrouiller pour l'installation:
@@ -14,7 +25,7 @@ Si vous voulez utiliser vos machines perso vous devrez vous débrouiller pour l'
 
 # Prise en main
 
-Pour déveloper, vous pouvez utiliser l'éditeur Geany qui a un terminal intégré. Ecrivez votre code dans un fichier **main.py** que vous exécuterez avec la commande `python3 ./main.py`.
+Pour déveloper, vous pouvez utiliser l'éditeur Geany qui a un terminal intégré. Ecrivez votre code dans un fichier **main.py** que vous exécuterez avec la commande `python ./main.py`.
 
 Commencez par importer **numpy** et **theano**:
 
@@ -120,7 +131,10 @@ Vous pouvez jouer avec le nombre d'itérations (epochs) et le taux d'apprentissa
 
 Modifiez le code de la régression logistique afin d'apporter les améliorations suivantes:
 
-+ ajouter une (ou plusieurs) couches de neurones cachés, avec une fonction d'activation **tanh**;
++ ajouter une (ou plusieurs) couches de neurones cachés;
 + ajouter un momentum à la descente de gradient pour accélérer l'apprentissage;
 + ajouter un terme de régularisation **L2** ou **L1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
-+ ajouter quelques couches de convolution avec max pooling (`theano.tensor.nnet.conv2d` et `theano.tensor.signal.pool.pool2d`).
++ ajouter un critère arret anticipé (early stopping) lorsque le cout ne diminue plus sur le jeu de validation (pensez à sauvegarder le meilleur modèle);
++ ajouter quelques couches de convolution avec max pooling ([`theano.tensor.nnet.conv2d`](http://deeplearning.net/software/theano/library/tensor/nnet/conv.html#theano.tensor.nnet.conv2d) et [`theano.tensor.signal.pool.pool2d`](http://deeplearning.net/software/theano/library/tensor/signal/pool.html#theano.tensor.signal.pool.pool_2d)).
+
+Astuces: pour le MLP, essayez deux couche cachée de taille 100, avec la fonction d'activation **tanh**. Pour le CNN, essayez l'architecture suivante: une couche de 20 filtres 5x5, un max pooling 2x2, puis une couche de 50 filtres 5x5, un max pooling 2x2, puis une couche cachée de taille 100.
