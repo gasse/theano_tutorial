@@ -134,4 +134,7 @@ Modifiez le code de la régression logistique afin d'apporter les améliorations
 + ajouter une (ou plusieurs) couches de neurones cachés, avec une fonction d'activation **tanh**;
 + ajouter un momentum à la descente de gradient pour accélérer l'apprentissage;
 + ajouter un terme de régularisation **L2** ou **L1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
++ ajouter un critère arret anticipé (early stoping) lorsque le cout ne diminue plus sur le jeu de validation (pensez à sauvegarder le meilleur modèle);
 + ajouter quelques couches de convolution avec max pooling ([`theano.tensor.nnet.conv2d`](http://deeplearning.net/software/theano/library/tensor/nnet/conv.html#theano.tensor.nnet.conv2d) et [`theano.tensor.signal.pool.pool2d`](http://deeplearning.net/software/theano/library/tensor/signal/pool.html#theano.tensor.signal.pool.pool_2d)).
+
+Astuces: pour le MLP, essayez deux couche cachée de taille 100. Pour le CNN, essayez l'architecture suivante: une couche de 20 filtres 5x5, un max pooling 2x2, puis une couche de 50 filtres 5x5, un max pooling 2x2, puis une couche cachée de taille 100.
