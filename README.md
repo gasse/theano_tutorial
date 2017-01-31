@@ -2,10 +2,21 @@
 
 TP SOUS LINUX !
 
-Dans une console, installez la librairie **theano** pour python 3:
+Installez **conda** pour python 3:
+```sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh ./Miniconda3-latest-Linux-x86_64.sh
+```
+
+Installez les dépendances suivantes:
 
 ```python
-pip3 install theano matplotlib
+conda install numpy scipy mkl matplotlib
+```
+
+Installez la librairie **theano**:
+```python
+pip install --user Theano
 ```
 
 Si vous voulez utiliser vos machines perso vous devrez vous débrouiller pour l'installation:
@@ -123,4 +134,4 @@ Modifiez le code de la régression logistique afin d'apporter les améliorations
 + ajouter une (ou plusieurs) couches de neurones cachés, avec une fonction d'activation **tanh**;
 + ajouter un momentum à la descente de gradient pour accélérer l'apprentissage;
 + ajouter un terme de régularisation **L2** ou **L1** à la fontion coût (pénalisation des poids `w`) pour prévenir l'overfitting;
-+ ajouter quelques couches de convolution avec max pooling (`theano.tensor.nnet.conv2d` et `theano.tensor.signal.pool.pool2d`).
++ ajouter quelques couches de convolution avec max pooling ([`theano.tensor.nnet.conv2d`](http://deeplearning.net/software/theano/library/tensor/nnet/conv.html#theano.tensor.nnet.conv2d) et [`theano.tensor.signal.pool.pool2d`](http://deeplearning.net/software/theano/library/tensor/signal/pool.html#theano.tensor.signal.pool.pool_2d)).
